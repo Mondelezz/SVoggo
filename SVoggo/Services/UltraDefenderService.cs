@@ -6,7 +6,7 @@ using SVoggo.Enums;
 using SVoggo.Interfaces;
 using SVoggo.Models;
 
-namespace SVoggo;
+namespace SVoggo.Services;
 
 public class UltraDefenderService : IUltraDefenderService
 {
@@ -49,6 +49,12 @@ public class UltraDefenderService : IUltraDefenderService
         }
     }
 
+    /// <summary>
+    /// Проверяет напрямую (filePath) файл на вирусность.
+    /// </summary>
+    /// <param name="filePath">Путь к файлу</param>
+    /// <param name="ct">Токен отмены</param>
+    /// <returns></returns>
     public async Task<ThreatReport> AnalyzeFileAsync(string filePath, CancellationToken ct = default)
     {
         if (!_isDefenderAvailable)

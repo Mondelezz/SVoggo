@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-using SVoggo;
+using SVoggo.Services;
 using SVoggo.Interfaces;
 
 public static class Program
